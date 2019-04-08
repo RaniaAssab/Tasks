@@ -1,0 +1,40 @@
+{
+ "name": "figure3_B",
+ "children": [
+  {
+     "name": "Cluster1",
+     "children": [
+      {
+        "name": "cluster1",
+        "children": [
+        {"name": "1. Malignant neoplasm of breast", "size": 60000}
+     ]
+    },
+  {
+     "name": "Cluster2",
+     "children": [
+      {"name": "2. Schizophrenia", "size": 59000}
+     ]
+    },
+  {
+     "name": "Cluster3",
+     "children": [
+      {"name": "3. Experimental", "size": 51000}
+     ]
+    },
+  {
+     "name": "Cluster4",
+     "children": [
+      {"name": "4. Liver cirrhosis", "size": 48000}
+     ]
+    },
+  {
+     "name": "Cluster5",
+     "children": [
+      {"name": "5. Colorectal cancer", "size": 38000}
+     ]
+    }
+  ]
+}
+]
+}
