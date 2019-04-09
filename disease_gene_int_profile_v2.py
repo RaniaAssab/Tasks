@@ -8,10 +8,13 @@
 ##############################  disease-gene interaction ######################################
 ###############################################################################################
 
-print "disease-gene interaction"
+import operator
+import csv
 
-print "Part 1: Central genes of the network"
-print "Pending"
+print "###############################################################################################"
+print "##############################  disease-gene interaction ######################################"
+print "###############################################################################################"
+
 
 #read file disease_Gene_Net.txt
 f = open('disease_Gene_Net.txt', 'r')
@@ -25,8 +28,9 @@ for row in f.readlines()[1:]:
     itm = dName.split('\n')
     diseaseName.append(itm[0])
 
-#Recuperation genes liste sorted par ordre alphabetique
-geneList = set(genSymbol[1:50])
+
+print "Part 1: Central genes of the network"
+print "Pending"
 
 
 def fonc1(liste):
@@ -35,32 +39,41 @@ def fonc1(liste):
     """
     return [[k, liste.count(k)] for k in set(liste)]
 
-lliste = fonc1(genSymbol[0:50])
+#Recuperation genes liste sorted alphabeticaly
+lliste = fonc1(genSymbol)
+geneList = []
 numList = []
 for elem in lliste:
+	geneList.append(elem[0])
 	numList.append(elem[1])
 
-#Central gene of the network in a dictionnary
+
+#Central genes of the network in a dictionnary
 dic1 = {}
 dic1.update(zip(geneList,numList))
 
+w = csv.writer(open("output.csv", "w"))
+for key, val in dic1.items():
+	w.writerow([key, val])
 
 print "Done!"
 
+print "There are ",len(geneList)," central genes in the network."
+print "They are reported in output.csv"
 
 
 
 print "Part 2: Identify top five diseases with similar disease-gene interaction profile"
 
 
-newGL = []
-newDN = []
-
 #For each disease-> One gene
 #Some genes have several diseases in the same line
 #Decomposition
 print "Part 2 Step 1"
 print "Pending"
+newGL = []
+newDN = []
+
 for gene in range(0,len(diseaseName)):
 	for elem in range(0,len(diseaseName)):
 		if elem == gene:
@@ -69,8 +82,8 @@ for gene in range(0,len(diseaseName)):
 				newGL.append(genSymbol[gene])
 				newDN.append(i)
 
-print len(newGL), len(newDN)
 print "Done!"
+
 
 print "Part 2 Step 2"
 print "Pending"
@@ -90,26 +103,28 @@ for i in range(0,len(newDN)):
 		tmp+=1
 print "Done!"
 
+
 print "Part 2 Step 3"
 print "Pending"
 geneCount = []
 for i in range(0,len(nGL)-1):
 	geneCount.append(len(nGL[i]))
-print len(geneCount)
 print "Done!"
+
 
 print "Part 2 Step 4"
 dic2 = {}
 for i in range(0,len(geneCount)-1):
     dic2[nDN[i]] = geneCount[i]
-print 'dic2 =',dic2
 
-import operator
 sorted_diseases = sorted(dic2.items(), key=operator.itemgetter(1))
 top5 = sorted_diseases[-5:]
-print top5
-
 print "Done!"
+
+print "The top 5 diseases are : \n"
+for i in reversed(range(len(top5))):
+	print len(top5)-i,": ", top5[i][0], " -> ",top5[i][1] ," genes \n"
+
 
 
 
