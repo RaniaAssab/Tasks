@@ -7,31 +7,31 @@
       {
         "name": "cluster1",
         "children": [
-        {"name": "1. Liver cirrhosis -", "size": 60000}
+        {"name": "1. Malignant neoplasm of breast -", "size": 60000}
      ]
     },
   {
      "name": "Cluster2",
      "children": [
-      {"name": "2. Malignant neoplasm of breast -", "size": 37400}
+      {"name": "2. Chemically-Induced Liver Toxicity -", "size": 39000}
      ]
     },
   {
      "name": "Cluster3",
      "children": [
-      {"name": "3. Toxic -", "size": 24300}
+      {"name": "3. Chemical and Drug Induced Liver Injury -", "size": 39000}
      ]
     },
   {
      "name": "Cluster4",
      "children": [
-      {"name": "4. Toxic -", "size": 24300}
+      {"name": "4. Drug-Induced Acute Liver Injury -", "size": 39000}
      ]
     },
   {
      "name": "Cluster5",
      "children": [
-      {"name": "5. Chemically-Induced liver toxicity -", "size": 24200}
+      {"name": "5. Drug-Induced Liver Disease -", "size": 39000}
      ]
     }
   ]
