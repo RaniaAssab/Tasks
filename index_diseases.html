@@ -15,7 +15,8 @@ var diameter = 1070,
     format = d3.format(",d"),
     color = d3.scale.category10();
 
-var percentages_diseases = ["(1025 genes)","(1023 genes)","(899 genes)","(846 genes)","(676 genes)"];
+var percentages_diseases = ["(1025 genes)","(1023 genes)","(899 genes)","(846 genes)","(676 genes)"],
+    disease2 = ["Experimental","Brest carcinoma","Drug-Induced","Hepatitis","Hepatitis"];
 
 function colores_google(n) {
   var colores_g = ["#5574a6", "#994499", "#22aa99", "#e67300", "#aaaa11"];
@@ -57,7 +58,13 @@ d3.json("top5_diseases.json", function(error, root) {
       .style('font-size', '18px')
 
   node.append("text")
-      .attr("dy", "1.3em")
+      .attr("dy", "1.5em")
+      .style("text-anchor", "middle")
+      .text(function(d,i) {return disease2[i];  })
+      .style('font-size', '18px')
+
+  node.append("text")
+      .attr("dy", "3em")
       .style("text-anchor", "middle")
       .text(function(d,i) {return percentages_diseases[i];  })
       .style('font-size', '18px');
